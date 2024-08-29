@@ -12,7 +12,15 @@ def load_user(user_id):
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
+    usuario = db.Column(db.String(40), unique=True, nullable=False)
+    senha = db.Column(db.String(200), nullable=False)
+
+    event = db.relationship('Event', backref='user', lazy=True)
 
 
 class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    nome = db.Column(db.String(100), nullable=False)
+    data_evento = db.Column(db.Date, nullable=False)
+    descricao = db.Column(db.String, nullable=False)
+    usuario_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
