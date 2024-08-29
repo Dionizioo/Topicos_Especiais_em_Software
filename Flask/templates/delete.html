@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h1>Deletar Usuário</h1>
+<p>Você tem certeza que deseja deletar o usuário "{{ user.username }}"?</p>
+<form method="POST">
+    <input type="submit" value="Deletar">
+</form>
+<a href="{{ url_for('user_detail', id=user.id) }}">Cancelar</a>
+{% endblock %}

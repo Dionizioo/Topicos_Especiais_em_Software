@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+Menu de Segunda-feira
+{% endblock %}
+
+{% block body %}
+<h1>Menu de Segunda-feira de muito blablabla {{ usuario }}</h1>
+<form method="POST" action="/">
+    {{ form.csrf_token }}
+    {{ form.name.label }} {{ form.name(size=20) }}
+    {{ form.senha.label }} {{ form.senha }}
+    {{ form.btn }}
+    <input type="submit" value="Go">
+</form>
+{% endblock %}
