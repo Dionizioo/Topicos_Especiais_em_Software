@@ -4,7 +4,6 @@ from models import load_user, Event
 from models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from forms import LoginForm, RegisterForm, EventForm
-from flask_login import login_user, logout_user, login_required
 
 
 @app.route('/')
@@ -65,12 +64,10 @@ def login():
 
 @app.route('/logout')
 def logout():
-    logout_user()
-    return  redirect(url_for('home'))
+    pass
 
 
 @app.route('/dashboard')
-@login_required
 def dashboard():
     return render_template('dashboard.html')
 

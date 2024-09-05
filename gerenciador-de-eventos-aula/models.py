@@ -6,8 +6,8 @@ from config import db, login_manager
 
 @login_manager.user_loader
 def load_user(user_id):
-     return User.query.get(int(user_id))
-    #return 0
+    # return User.query.get(int(user_id))
+    return 0
 
 
 class User(db.Model, UserMixin):
