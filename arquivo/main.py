@@ -15,7 +15,7 @@
         file.close()
 """
 
-with open('contas.txt', 'w') as file:
+'''with open('contas.txt', 'w') as file:
     file.write("100 Jules 24,90\n")
     file.write("101 Maria 30,00\n")
     file.write("102 Pedro 40,00\n")
@@ -49,7 +49,7 @@ with contas, temp:
 
 import os
 os.remove('contas.txt')
-os.rename('contas_temp.txt', 'contas.txt')
+os.rename('contas_temp.txt', 'contas.txt') '''
 
 
 '''Desafio 1: Leitor de Arquivos com Contagem de Palavras
@@ -65,3 +65,28 @@ Desafio Extra:
 Ignore maiúsculas/minúsculas (ex: "Python" e "python" contam como a mesma palavra).
 Remova pontuações (ex: "palavra," e "palavra" devem ser contadas como a mesma).'''
 
+import string
+from collections import Counter
+
+def contarpalavras(arquivo):
+    try:
+        with open(arquivo, 'r', encoding='utf-8') as file:
+            texto = file.read()
+
+            #conveter para minisculas e remover pontuação
+            texto = texto.lower()
+            texo = texto.translate(str.maketrans('','', string.punctuation))
+
+            #separa as palavaras e contar a frequencia
+            palavras = texto.split()
+            contador= Counter(palavras)
+
+            for palavras , frequencia in contador.most_common():
+                print(f'{palavras}:{frequencia}')
+    except FileNotFoundError:
+        print('Arquivo não encontrado')
+
+
+#solicitar o nome do arquivo
+nome_arquivo = input('Digite o nome do arquivo: ')
+contarpalavras(nome_arquivo)
