@@ -1,0 +1,20 @@
+<filmes>
+    <filme id="2">
+        <titulo>A Bela e a Fera</titulo>
+        <ano>1991</ano>
+        <diretor>Gary Trousdale</diretor>
+        <arrecadacao>440.1</arrecadacao>
+    </filme>
+    <filme id="3">
+        <titulo>Frozen</titulo>
+        <ano>2013</ano>
+        <diretor>Jennifer Lee</diretor>
+        <arrecadacao>1300.0</arrecadacao>
+    </filme>
+    <filme id="4">
+        <titulo>Aladdin</titulo>
+        <ano>1992</ano>
+        <diretor>Ron Clements</diretor>
+        <arrecadacao>504.1</arrecadacao>
+    </filme>
+</filmes>
